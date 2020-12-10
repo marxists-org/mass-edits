@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/><TITLE> How to make a local Error Handler </TITLE>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="author" content="Andy Blunden">
+<LINK rel="stylesheet" type="text/css" href="../../archive/css/works.css">
+</HEAD>
+<BODY>
+<H5>How to make a local Error Handler</H5>
+<p class="fst">Visitors may try to load files in your directory which don&#146;t exist. This may be due to a bad link in your site, but more likely the error is located in a search engine or a link on an external site or elsewhere on MIA. </p>
+<p>You need to capture that attempt and tell the visitor how to find the file they're looking for and give them the opportunity to tell you about it. This is done more effectively the closer to the location of the non-existent file that you can capture the attempt.</p>
+<p>An attempt to load a non-existent file will generate an error code 404 in the server. The server responds by searching up the directory tree until it finds a file called <span style="background: #ddddff;">.htaccess</span> (extension without filename). The .htaccess file is an ordinary text file which contains either of two types of redirection instruction. </p>
+<p>See <a href="http://www.javascriptkit.com/howto/htaccess.shtml">Tutorial on .htaccess</a> for a comprehensive explanation.</p>
+<p class="fst"><span class="term">Example 1</span>: <span style="background: #ddddff;">http://www.marxists.org/archive/marx/.htaccess</span>:</p>
+<p class="quoteb" style="background: #ffffdd; margin-left: 40px; text-align: left;">ErrorDocument 404 http://www.marxists.org/archive/marx/404.htm</p>
+<p class="fst"><em>Example 1</em> redirects a client which tried to load <em>any non-existent file</em> in the directory or subdirectories to the local error-handler <span style="background: #ddddff;">404.htm</span></p>
+<p>The <span style="background: #ddddff;">404.htm</span> is an ordinary html document. See <span style="background: #ddddff;"><a href="../../archive/marx/404.htm">http://www.marxists.org/archive/marx/404.htm</a></span> as an example. </p>
+<p>This should contain the message explaining that the file was not found, links to indexes which you believe will reliably lead the visitor to any information in the relevant directory, and an email-button to the director.</p>
+<p class="fst"><em>Note</em>: You cannot use a relative address for the destination diectory; it must be an absolute address http://www.marxists.org/...</p>
+<p class="fst"><span class="term">Example 2</span>: <span style="background: #ddddff;">http://www.marxists.org/archive/marx/works/.htaccess</span>:</p>
+<p class="quoteb" style="background: #ffffdd; margin-left: 40px; text-align: left;">Redirect /archive/marx/works/1840/com-man/partone.htm http://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch01.htm</p>
+<p class="fst"><em>Example 2</em> redirects a client which tried to load works/1840/com-man/partone.htm (an old file which has been renamed and relocated, and may or may not exist) to works/1848/communist-manifesto/ch01.htm. You can have multiple lines like this.</p>
+<p>This is the <em>preferred method</em>. Once you have created the .htaccess file in a parent directory somewhere, it will handle all old links and you can delete the old files and directories and forget about them. Including an ErrorDocument 404 line at the end of the .htaccess file, after the specific redirects, will deal with &#147;others&#148;.</p>
+<p>When the old files are deleted, any existing links elsewhere in the archive will generate error messages on <a href="linkreports/allbadrefs.htm">allbadrefs.htm</a>, and these can then be removed.</p>
+<p class="fst"><span class="term">Example 3</span>: <span style="background: #ddddff;">http://www.marxists.org/archive/marx/works/.htaccess</span>:</p>
+<p class="quoteb" style="background: #ffffdd; margin-left: 40px; text-align: left;">Redirect /archive/marx/works/1840/com-man http://www.marxists.org/archive/marx/works/1848/communist-manifesto</p>
+<p class="fst"><em>Example 3</em> lists only the directory, not the filename, and redirects a client looking for works/1840/com-man/foo.htm (an old file which has been relocated) to works/1848/communist-manifesto/foo.htm.</p>
+<p>This is easier when you have a lot of files in the old directory, but is not recommended because if you change the names of files in the new location, the client will get an error message when redirected there, but you will have no record of the old file names. This means that it is difficult to maintain and impossible to check.</p>
+<hr class="section">
+<p class="fst"><span class="term">Example 4</span>: The same effect can be achieved by placing a redirect command inside the redundant file. This avoids generating bad link messages which you would get if you deleted the old file, but it is not the preferred method, as it leaves redundant files around the archive, whch will have to be cleaned up some time, and fails to alert others administrators of the need to update their links.</p>
+<p>To do this, an additional line of code must be placed in the header of an html file (<span style="background: #ddddff;">http://www.marxists.org/archive/marx/works/1840/com-man/index.htm</span>):</p>
+<p class="quoteb" style="background: #ffffdd; margin-left: 40px; text-align: left;">&lt;META http-equiv="Refresh&#148; content="3;URL=../../1848/communist-manifesto/index.htm"&gt;</p>
+<p>The &#147;3&#148; here tells the client to wait 3 seconds before moving to the URL.</p>
+
+<p class="skip">&nbsp;</p>
+<hr class="end">
+<p class="footer">
+<a href="../janitor/index.htm">Janitor Page</a>
+</p>
+</BODY>
+</HTML>

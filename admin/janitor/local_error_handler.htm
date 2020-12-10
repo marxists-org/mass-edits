@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<TITLE> How to make a local Error Handler </TITLE>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="author" content="Andy Blunden">
+<LINK rel="stylesheet" type="text/css" href="../../archive/css/works.css">
+</HEAD>
+<BODY>
+<H5>How to make a local Error Handler</H5>
+<div style="margin-left: 3%; width: 600px;">
+	<p style="border: 3px double #ff0000; padding: 10px; box-shadow: 10px 10px 5px grey;"><strong>EDIT:</strong> For performance and security reasons, the use of .htaccess files has been deprecated; however, in most cases, the measures described in example 3 can be used as an alternative &mdash;JH.</p>
+</div>
+<p class="fst">Visitors may try to load files in your directory which don&#146;t exist. This may be due to a bad link in your site, but more likely the error is located in a search engine or a link on an external site or elsewhere on MIA. </p>
+<p>You need to capture that attempt and tell the visitor how to find the file they're looking for and give them the opportunity to tell you about it. This is done more effectively the closer to the destination of the non-existent file that you can capture the attempt.</p>
+<p>An attempt to load a non-existent file will generate an error code 404 in the server. The server responds by searching up the directory tree until it finds a file called <span style="background: #ddddff;">.htaccess</span> (no extension). The .htaccess file is an ordinary text file which contains either of two types of redirection instruction. </p>
+<p><span class="term">Example 1</span>: <span style="background: #ddddff;">http://www.marxists.org/archive/marx/.htaccess</span>:</p>
+<p class="quoteb" style="background: #ffffdd; margin-left: 40px;">ErrorDocument 404 http://www.marxists.org/archive/marx/404.htm</p>
+<p><em>Example 1</em> redirects a client which tried to load <em>any non-existent file</em> in the directory or subdirectories to the local error-handler <span style="background: #ddddff;">404.htm</span></p>
+<p>The <span style="background: #ddddff;">404.htm</span> is an ordinary html document. See <span style="background: #ddddff;">http://www.marxists.org/archive/marx/404.htm</span> as an example. </p>
+<p>This should contain the message explaining that the file was not found, links to indexes which you believe will reliably lead the visitor to any information in the relevant directory, and an email-button to the director.</p>
+<p><span class="term">Example 2</span>: <span style="background: #ddddff;">http://www.marxists.org/archive/marx/works/.htaccess</span>:</p>
+<p class="quoteb" style="background: #ffffdd; margin-left: 40px;">Redirect /archive/marx/works/1840/com-man http://www.marxists.org/archive/marx/works/1848/communist-manifesto</p>
+<p class="fst"><em>Example 2</em> redirects a client which tried to load works/1840/com-man (an old file which has been relocated) to the directory works/1848/communist-manifesto.</p>
+<p><span class="term">Example 3</span>: The same effect can be achieved by placing a redirect file in place of the redundant file.</p>
+<p>To do this, an additional line of code must be placed in the header of an html file (<span style="background: #ddddff;">http://www.marxists.org/archive/marx/works/1840/com-man/index.htm</span>):</p>
+<p class="quoteb" style="background: #ffffdd; margin-left: 40px;">&lt;meta 
+http-equiv=&quot;refresh&quot; content=&quot;0;URL=../../1848/communist-manifesto/index.htm&quot; /&gt;</p>
+<p>The &#147;0&#8221; here tells the client to wait 0 seconds before moving to the URL.</p>
+
+<p class="skip">&nbsp;</p>
+<hr class="end">
+<p class="footer">
+<a href="index.htm">Janitor Page</a>
+</p>
+</BODY>
+</HTML>
