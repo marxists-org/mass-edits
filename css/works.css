@@ -1,0 +1,1134 @@
+/*
+ * Do not edit directly.
+ * This file is built from source code hosted at
+ * http://www.github.com/marxists-org/stylesheets.
+ * Instructions to build and/or contribute can be found there.
+ * 
+ * Current maintained by Philip Mooney <philipm@marxists.org>.
+ * 
+ * Special thank you to past maintainers and contributors:
+ * Andy Blunden, Brian Baggins and David Walters.
+ * 
+ * All Documents:
+ * This stylesheet is one of the basic MIA standards for ordinary texts
+ * (as opposed to indexes). It is imported into a range of styles with different
+ * colour schemes. New elements can be added here, or new stylesheets added
+ * incorporating a volunteer's specific needs.
+ * e.g. https://www.marxists.org/archive/marx/works/1845/theses/index.htm
+ */
+
+:root {
+  /* color variables */
+  --color-black: rgb(0, 0, 0);
+  --color-gray-7: rgb(18, 18, 18);
+  --color-gray-11: rgb(28, 28, 28);
+  --color-gray-20: rgb(51, 51, 51); /* #333333 */
+  --color-gray-24: rgb(62, 62, 62);
+  --color-gray-40: rgb(102, 102, 102); /* #666666 */
+  --color-gray-51: rgb(129, 129, 129);
+  --color-gray-60: rgb(153, 153, 153); /* #999999 */
+  --color-gray-66: rgb(169, 169, 169);
+  --color-gray-67: rgb(170, 170, 170); /* #aaaaaa */
+  --color-gray-69: rgb(177, 177, 177);
+  --color-gray-80: rgb(204, 204, 204); /* #cccccc */
+  --color-gray-93: rgb(238, 238, 238); /* #eeeeee */
+  --color-gray-94: rgb(239, 239, 239); /* #efefef */
+  --color-white: rgb(255, 255, 255);
+  --color-cyan-dark: rgb(80, 164, 202);
+  --color-cyan-bright: rgb(90, 200, 250);
+  --color-blue-20: rgb(0, 0, 51); /* #000033 */
+  --color-blue-40: rgb(0, 0, 102); /* #000066 */
+  --color-blue-53: rgb(0, 0, 136); /* #000088 */
+  --color-blue-60: rgb(0, 0, 153); /* #000099 */
+  --color-purple: rgb(136, 51, 153); /* #883399 */
+  --color-pink-flat: rgb(255, 204, 204); /* #ffcccc */
+  --color-pink-bright: rgb(255, 153, 153); /* #ff9999 */
+  /* theme variables */
+  --a--color: var(--color-blue-60);
+  --a-visited--color: var(--color-purple);
+  --a-mecw--color: var(--color-gray-67);
+  --body--bg-color: var(--color-white);
+  --body--color: var(--color-black);
+  --div-border--bg-color: var(--color-white);
+  --div-border--border-color: var(--color-blue-53);
+  --hr--bg-color: initial;
+  --h1--color: var(--color-blue-20);
+  --h1-big--color: var(--color-blue-20);
+  --h2--color: var(--color-blue-20);
+  --h3--color: var(--color-blue-20);
+  --h4--color: var(--color-blue-20);
+  --h5--color: var(--color-blue-20);
+  --h6--color: var(--color-blue-20);
+  --h7--color: var(--color-blue-40);
+  --sup-anote--color: var(--color-blue-20);
+  --sup-ednote--color: var(--color-blue-20);
+  --span-inote--color: var(--color-gray-40);
+  --span-info--color: var(--color-blue-20);
+  --span-term--color: var(--color-blue-20);
+  --span-date--color: var(--color-gray-20);
+  --span-context--color: var(--color-gray-60);
+  --p-information--color: var(--color-blue-20);
+  --p-transcriber--color: var(--color-gray-40);
+  --p-endnote--color: var(--color-black);
+  --p-inline--color: var(--color-gray-40);
+  --p-toc--color: var(--color-blue-20);
+  --p--title2--color: var(--color-blue-20);
+  --p-pagenote--color: var(--color-blue-20);
+  --p-pagenoteb--color: var(--color-gray-40);
+  --table-data--bg-color: var(--color-gray-93);
+  --table-data-td--bg-color: var(--color-white);
+  --table-data-td--color: var(--color-black);
+  --td-data--bg-color: var(--color-white);
+  --td-data--color: var(--color-black);
+  --td-border--border-color: black;
+  --td-head--bg-color: var(--color-gray-60);
+  --tr-alt--bg-color: var(--color-gray-80);
+  --tr-total--bg-color: var(--color-pink-flat);
+  --tr-total--color: inherit;
+  --tr-totalb--bg-color: var(--color-pink-bright);
+  --tr-totalb--color: inherit;
+  --td-index--bg-color: var(--color-gray-94);
+  --td-index--color: var(--color-gray-60);
+  --td-index-alt--bg-color: var(--color-white);
+  --td-index-alt--color: var(--color-gray-60);
+  --td-indexb--bg-color: var(--color-white);
+  --td-indexb--color: var(--color-gray-60);
+}
+
+
+/*
+ * =====================================
+ * General
+ * =====================================
+ */
+
+body {
+  background: rgb(255, 255, 255);
+  background: var(--body--bg-color);
+  color: rgb(0, 0, 0);
+  color: var(--body--color);
+}
+
+a:link {
+  color: rgb(0, 0, 153);
+  color: var(--a--color);
+}
+
+a:visited {
+  color: rgb(136, 51, 153);
+  color: var(--a-visited--color);
+}
+
+a.mecw {
+  color: rgb(170, 170, 170);
+  color: var(--a-mecw--color);
+  text-decoration: none;
+}
+
+div.border {
+  background: rgb(255, 255, 255);
+  background: var(--div-border--bg-color);
+  width: 99%;
+  padding: 1em;
+  border: 0.1em solid rgb(0, 0, 136);
+  border: 0.1em solid var(--div-border--border-color);
+}
+
+img.right {
+  float: right;
+  margin: 2em;
+}
+
+img.left {
+  float: left;
+  margin: 2em;
+}
+
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.middle {
+  vertical-align: middle;
+}
+
+hr.section {
+  width: 33%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 1px;
+}
+
+hr.base {
+  width: 92%;
+  text-align: center;
+  height: 1px;
+}
+
+hr.end {
+  width: 92%;
+  text-align: center;
+  height: 1px;
+}
+
+hr {
+  width: 88%;
+  text-align: center;
+  height: 1px;
+  background-color: initial;
+  background-color: var(--hr--bg-color);
+}
+
+em {
+  word-spacing: 0.2em;
+}
+
+em.stretch {
+  letter-spacing: 0.2em;
+  word-spacing: 0.1em;
+}
+
+blockquote {
+  margin-left: 9%;
+}
+
+
+/* Basic p */
+
+p {
+  text-indent: 1em;
+  font-family: "Georgia", serif;
+  font-size: 12pt;
+  font-style: normal;
+  text-align: justify;
+  line-height: 150%;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+
+/*
+ * =====================================
+ * Document Headers
+ * =====================================
+ */
+
+
+/* Document Title */
+
+h1 {
+  color: rgb(0, 0, 51);
+  color: var(--h1--color);
+  font-weight: bold;
+  font-size: xx-large;
+  font-family: "Hoefler Text", "Century Schoolbook", "Georgia", serif;
+  text-align: center;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+h1.big {
+  color: rgb(0, 0, 51);
+  color: var(--h1-big--color);
+  font-weight: bold;
+  font-size: 28pt;
+  font-family: "Hoefler Text", "Century Schoolbook", "Georgia", serif;
+  text-align: center;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+
+/* Authors' name */
+
+h2 {
+  color: rgb(0, 0, 51);
+  color: var(--h2--color);
+  font-weight: bold;
+  font-size: large;
+  line-height: 150%;
+  font-family: "Helvetica", "Arial", sans-serif;
+  text-align: center;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+
+/* Chapter Title */
+
+h3 {
+  color: rgb(0, 0, 51);
+  color: var(--h3--color);
+  font-weight: bold;
+  text-align: center;
+  font-family: "Century Schoolbook", "Hoefler Text", "Georgia", serif;
+  line-height: 150%;
+  font-size: 22pt;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+
+/* Section Title */
+
+h4 {
+  color: rgb(0, 0, 51);
+  color: var(--h4--color);
+  font-weight: bold;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-size: 14pt;
+  line-height: 150%;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+
+/* Sub Section 2 */
+
+h5 {
+  color: rgb(0, 0, 51);
+  color: var(--h5--color);
+  font-weight: bold;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-size: 12pt;
+  line-height: 175%;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+
+/* Sub Section 3 */
+
+h6 {
+  color: rgb(0, 0, 51);
+  color: var(--h6--color);
+  font-weight: bold;
+  text-align: left;
+  font-family: "Arial", sans-serif;
+  font-size: 12pt;
+  line-height: 175%;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+
+/* Sub Section 4 */
+
+h7 {
+  color: rgb(0, 0, 102);
+  color: var(--h7--color);
+  font-weight: normal;
+  text-align: left;
+  font-family: "Arial", sans-serif;
+  font-size: 12pt;
+  line-height: 175%;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+
+/*
+ * =====================================
+ * Footnote references
+ * =====================================
+ */
+
+sup {
+  font-family: "Arial", monospace;
+  font-size: x-small;
+  font-weight: normal;
+}
+
+sub {
+  font-family: "Arial", monospace;
+  font-size: x-small;
+  font-weight: normal;
+}
+
+
+/* Author's */
+
+sup.anote {
+  color: rgb(0, 0, 51);
+  color: var(--sup-anote--color);
+  font-family: "Georgia", serif;
+  font-weight: bold;
+}
+
+
+/* Editor's */
+
+sup.ednote {
+  color: rgb(0, 0, 51);
+  color: var(--sup-ednote--color);
+  font-family: "Courier New", monospace;
+}
+
+sup.enote {
+  font-family: "arial", sans-serif;
+  font-size: 10pt;
+}
+
+span.inote {
+  color: rgb(102, 102, 102);
+  color: var(--color-gray-40);
+  font-size: 12pt;
+}
+
+sup.note {
+  font-family: "arial", sans-serif;
+  font-size: 11pt;
+}
+
+sub.eq {
+  font-size: 11pt;
+  font-family: "Georgia", serif;
+}
+
+sup.eq {
+  font-size: 11pt;
+  font-family: "Georgia", serif;
+}
+
+
+/*
+ * =====================================
+ * Spanners
+ * =====================================
+ */
+
+
+/* Used in the info block */
+
+span.info {
+  color: rgb(0, 0, 51);
+  color: var(--span-info--color);
+  font-family: "Arial", sans-serif;
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+
+/* Used for notes in the text */
+
+span.term {
+  color: rgb(0, 0, 51);
+  color: var(--span-term--color);
+  font-family: "Arial", sans-serif;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+
+/* Indiscreet text (primarily for dates) */
+
+span.date {
+  color: rgb(51, 51, 51);
+  color: var(--span-date--color);
+  font-family: "Arial", sans-serif;
+  font-size: small;
+  font-weight: normal;
+}
+
+
+/* Editorial notes in text */
+
+span.inote {
+  color: rgb(102, 102, 102);
+  color: var(--span-inote--color);
+  font-family: "Georgia", serif;
+  font-size: 12pt;
+  font-weight: normal;
+}
+
+
+/* Abstracts */
+
+span.context {
+  color: rgb(153, 153, 153);
+  color: var(--span-context--color);
+}
+
+
+/* Greek text */
+
+span.greek {
+  font-family: symbol;
+}
+
+
+/*
+ * =====================================
+ * Paragraph Styles
+ * =====================================
+ */
+
+
+/* Basic p -- without first line indent */
+
+p.fst {
+  text-indent: 0;
+}
+
+
+/* Document Bibliographical Informaiton */
+
+p.information {
+  color: rgb(0, 0, 51);
+  color: var(--p-information--color);
+  text-indent: 0;
+  font-size: 11pt;
+  line-height: 125%;
+  text-align: left;
+  margin-right: 8%;
+  margin-left: 8%;
+}
+
+p.from {
+  text-indent: 0;
+  font-size: 11pt;
+  font-style: italic;
+  line-height: 120%;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+p.transcriber {
+  color: rgb(102, 102, 102);
+  color: var(--p-transcriber--color);
+  text-indent: 0;
+  font-family: "Arial";
+  font-size: 8pt;
+  text-align: right;
+  margin-left: 24%;
+  margin-right: 9%;
+}
+
+
+/* Footnote text */
+
+p.endnote {
+  color: rgb(0, 0, 0);
+  color: var(--p-endnote--color);
+  font-size: 11pt;
+  text-indent: 0;
+  line-height: 130%;
+  text-indent: 0;
+}
+
+
+/*
+ * =====================================
+ * Quote elements
+ * =====================================
+ */
+
+
+/* Standard Quote */
+
+p.quote {
+  font-size: 11pt;
+  line-height: 130%;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+
+/* Quote without first line indent */
+
+p.quoteb {
+  text-indent: 0;
+  font-size: 11pt;
+  line-height: 130%;
+  text-align: justify;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+
+/* Sub Quote C (increased margin) */
+
+p.quotec {
+  text-indent: 0;
+  font-size: 11pt;
+  line-height: 130%;
+  margin-left: 16%;
+  margin-right: 16%;
+}
+
+
+/* Negative indent for number list */
+
+p.quote-list {
+  text-indent: -1em;
+  font-size: 11pt;
+  line-height: 130%;
+  margin-left: 14%;
+  margin-right: 14%;
+}
+
+
+/* Citation (quote citied) */
+
+p.inline {
+  color: rgb(102, 102, 102);
+  color: var(--p-inline--color);
+  text-indent: 0;
+  font-family: "Arial", sans-serif;
+  font-size: x-small;
+  text-align: right;
+  margin-left: 20%;
+  margin-right: 8%;
+}
+
+
+/*
+ * =====================================
+ * Index elements
+ * =====================================
+ */
+
+
+/* Table of contents */
+
+p.toc {
+  color: rgb(0, 0, 51);
+  color: var(--p-toc--color);
+  text-indent: 0;
+  font-weight: bold;
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 130%;
+  text-align: left;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+
+/* Basic Index */
+
+p.index {
+  text-indent: 0;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  text-align: left;
+  line-height: 200%;
+  margin-left: 9%;
+  margin-right: 9%;
+}
+
+
+/* Book title for Chapter files */
+
+p.title {
+  text-indent: 0;
+  font-weight: bold;
+  text-align: center;
+  margin: 1%;
+  font-family: "Arial", sans-serif;
+  font-size: 12pt;
+}
+
+p.title2 {
+  color: var(--p-title2--color);
+  text-indent: 0;
+  font-weight: bold;
+  text-align: left;
+  margin: 1%;
+  font-family: "Arial", sans-serif;
+  font-size: 11pt;
+}
+
+
+/* Signature */
+
+p.sig {
+  text-indent: 0;
+  font-family: "Vivaldi", script, serif;
+  font-size: 14pt;
+  font-weight: normal;
+  font-style: italic;
+  line-height: 125%;
+  text-align: left;
+  margin-left: 8%;
+}
+
+
+/* Misc page note */
+
+p.pagenote {
+  color: rgb(0, 0, 51);
+  color: var(--p-pagenote--color);
+  font-family: "Arial", sans-serif;
+  font-size: x-small;
+  text-align: center;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+
+/* Sub head */
+
+p.sub {
+  font-size: 14pt;
+  font-weight: bold;
+  line-height: 125%;
+  margin-left: 6%;
+  margin-right: 6%;
+  text-align: center;
+  text-indent: 0;
+}
+
+
+/* Misc page note (justified) */
+
+p.pagenoteb {
+  color: rgb(102, 102, 102);
+  color: var(--p-pagenoteb--color);
+  font-family: "Arial", sans-serif;
+  font-size: x-small;
+  text-align: justify;
+  line-height: 115%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+/*
+ * =====================================
+ * Indented Text
+ * =====================================
+ */
+
+
+/* Standard Indent */
+
+p.indent {
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+
+/* Indent without first line indent */
+
+p.indentb {
+  text-indent: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+/* Sub Indent C (increased margin) */
+
+p.indentc {
+  text-indent: 0;
+  margin-left: 16%;
+  line-height: 150%;
+  margin-right: 16%;
+}
+
+
+/* Negative indent for number list */
+
+p.indent-list {
+  text-indent: -1em;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+
+/*
+ * =====================================
+ * Page-ending elements
+ * =====================================
+ */
+
+
+/* For blank spaces */
+
+p.skip {
+  line-height: 75%;
+}
+
+
+/* Misc date */
+
+p.date {
+  text-align: right;
+}
+
+
+/* Next Section-Chapter of work */
+
+p.next {
+  text-indent: 0;
+  font-family: "Arial", sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+  text-align: center;
+  line-height: 125%;
+}
+
+p.footer {
+  text-indent: 0;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  margin: 3%;
+}
+
+p.updat {
+  text-align: right;
+  font-size: 9pt;
+  font-weight: normal;
+  margin-top: 0;
+  margin-right: 6%;
+}
+
+
+/* Numbered List style */
+
+ul {
+  margin-left: 6%;
+  margin-right: 4%;
+}
+
+ul.disc {
+  list-style-type: disc;
+  font-family: "Georgia", serif;
+  font-size: 12pt;
+  text-align: justify;
+  line-height: 130%;
+  margin-left: 14%;
+  margin-right: 14%;
+}
+
+ol {
+  margin-left: 6%;
+  margin-right: 4%;
+}
+
+ol.numbered {
+  list-style-type: arabic;
+  font-family: "Georgia", serif;
+  font-size: 12pt;
+  text-align: justify;
+  line-height: 130%;
+  margin-left: 14%;
+  margin-right: 14%;
+}
+
+
+/*
+ * =====================================
+ * Table elements
+ * =====================================
+ */
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  text-indent: 0;
+  vertical-align: top;
+  text-align: left;
+  line-height: 125%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+table.data {
+  background: rgb(238, 238, 238);
+  background: var(--table-data--bg-color);
+  font-family: "Georgia", monospace;
+  font-size: 10pt;
+}
+
+table.data td {
+  background: rgb(255, 255, 255);
+  background: var(--table-data-td--bg-color);
+  color: rgb(0, 0, 0);
+  color: var(--table-data-td--color);
+}
+
+
+/* Experimental begins, 27.11.2018, —JL */
+
+table.border {
+  border-collapse: collapse;
+}
+
+td.border {
+  border: 1px solid black;
+  border: 1px solid var(--td-border--border-color);
+  padding: 3px;
+}
+
+
+/* Experimental ends */
+
+
+/* Column Headings */
+
+td.head {
+  background: rgb(153, 153, 153);
+  background: var(--td-head--bg-color);
+  font-weight: bold;
+  text-align: center;
+  font-family: "Georgia", serif;
+  font-size: 12pt;
+}
+
+
+/* Row Colors */
+
+tr.alt {
+  background: rgb(204, 204, 204);
+  background: var(--tr-alt--bg-color);
+}
+
+tr.total {
+  background: rgb(255, 204, 204);
+  background: var(--tr-total--bg-color);
+  color: inherit;
+  color: var(--tr-total--color);
+}
+
+tr.totalb {
+  background: rgb(255, 153, 153);
+  background: var(--tr-totalb--bg-color);
+  color: inherit;
+  color: var(--tr-totalb--color);
+}
+
+td.index {
+  background: rgb(239, 239, 239);
+  background: var(--td-index--bg-color);
+  color: rgb(153, 153, 153);
+  color: var(--td-index--color);
+  text-indent: 0;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+/* Every alternate row */
+
+td.index-alt {
+  background: rgb(255, 255, 255);
+  background: var(--td-index-alt--bg-color);
+  color: rgb(153, 153, 153);
+  color: var(--td-index-alt--color);
+  text-indent: 0;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+/* Sub-Chapters */
+
+td.indexb {
+  background: rgb(255, 255, 255);
+  background: var(--td-indexb--bg-color);
+  color: rgb(153, 153, 153);
+  color: var(--td-indexb--color);
+  text-indent: 0;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 10pt;
+  font-weight: normal;
+  text-align: left;
+}
+
+td.text {
+  text-indent: 0;
+  font-family: "Georgia", serif;
+  font-size: 12pt;
+  font-weight: normal;
+  text-align: left;
+  vertical-align: top;
+}
+
+td.data {
+  background: rgb(255, 255, 255);
+  background: var(--td-data--bg-color);
+  color: rgb(0, 0, 0);
+  color: var(--td-data--color);
+  text-indent: 0;
+  font-family: "Georgia", serif;
+  font-size: 12pt;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+}
+
+td.small {
+  text-indent: 0;
+  font-family: "Georgia", serif;
+  font-size: 10pt;
+  font-weight: normal;
+  text-align: left;
+  vertical-align: top;
+}
+
+td.sdata {
+  text-indent: 0;
+  font-family: "Georgia", serif;
+  font-size: 10pt;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+}
+
+
+/*
+ * =====================================
+ * Adjustments for Mobile Devices
+ * =====================================
+ */
+
+@media (max-width: 480px) {
+  p {
+    font-size: 12pt;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 4pt;
+    margin-top: 4pt;
+    line-height: 125%;
+  }
+  p.indentb {
+    margin-left: 6%;
+    margin-right: 1%;
+  }
+  p.quoteb {
+    margin-left: 6%;
+    margin-right: 1%;
+  }
+  p.index {
+    margin-left: 6%;
+    margin-right: 1%;
+  }
+  h1 {
+    font-size: 18pt;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  h2 {
+    font-size: 16pt;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  h3 {
+    font-size: 14pt;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  h4 {
+    font-size: 13pt;
+    margin-left: 6%;
+    margin-right: 1%;
+  }
+  h5 {
+    margin-left: 1%;
+    margin-left: 6%;
+    margin-right: 1%;
+  }
+  h6 {
+    margin-left: 1%;
+    margin-left: 6%;
+    margin-right: 1%;
+  }
+  h7 {
+    margin-left: 1%;
+    margin-left: 6%;
+    margin-right: 1%;
+  }
+  img {
+    width: 150px;
+    height: auto;
+  }
+  blockquote {
+    margin-left: 1%;
+  }
+}
+
+
+/*
+ * =====================================
+ * Dark Mode
+ * =====================================
+ */
+
+body.night {
+  --a--color: var(--color-cyan-bright);
+  --a-visited--color: var(--color-cyan-bright);
+  --body--bg-color: var(--color-gray-7);
+  --body--color: var(--color-gray-69);
+  --div-border--bg-color: var(--color-gray-7);
+  --div-border--border-color: var(--color-gray-24);
+  --hr--bg-color: var(--color-gray-24);
+  --h1--color: var(--color-gray-66);
+  --h1-big--color: var(--color-gray-66);
+  --h2--color: var(--color-gray-66);
+  --h3--color: var(--color-gray-66);
+  --h4--color: var(--color-gray-66);
+  --h5--color: var(--color-gray-66);
+  --h6--color: var(--color-gray-66);
+  --h7--color: var(--color-gray-66);
+  --sup-anote--color: var(--color-gray-69);
+  --sup-ednote--color: var(--color-gray-69);
+  --span-inote--color: var(--color-gray-69);
+  --span-info--color: var(--color-gray-69);
+  --span-term--color: var(--color-gray-69);
+  --span-date--color: var(--color-gray-69);
+  --span-context--color: var(--color-gray-69);
+  --p-information--color: var(--color-gray-69);
+  --p-transcriber--color: var(--color-gray-69);
+  --p-endnote--color: var(--color-gray-69);
+  --p-inline--color: var(--color-gray-69);
+  --p-toc--color: var(--color-gray-69);
+  --p--title2--color: var(--color-gray-69);
+  --p-pagenote--color: var(--color-gray-69);
+  --p-pagenoteb--color: var(--color-gray-69);
+  --table-data--bg-color: var(--color-black);
+  --table-data-td--bg-color: var(--color-black);
+  --table-data-td--color: var(--color-gray-69);
+  --td-data--bg-color: var(--color-black);
+  --td-data--color: var(--color-gray-69);
+  --td-border--border-color: var(--color-gray-20);
+  --td-head--bg-color: var(--color-gray-11);
+  --tr-alt--bg-color: var(--color-black);
+  --tr-total--bg-color: var(--color-cyan-dark);
+  --tr-total--color: var(--color-gray-7);
+  --tr-totalb--bg-color: var(--color-cyan-bright);
+  --tr-totalb--color: var(--color-gray-7);
+  --td-index--bg-color: var(--color-gray-7);
+  --td-index--color: inherit;
+  --td-index-alt--bg-color: var(--color-gray-7);
+  --td-index-alt--color: var(--color-gray-51);
+  --td-indexb--bg-color: var(--color-gray-7);
+  --td-indexb--color: inherit;
+}
+
+body.night hr {
+  border: none;
+}
+
+body.night table {
+  border-collapse: collapse;
+}
+
+body.night th,
+  body.night td {
+  border: 1px solid rgb(51, 51, 51);
+  border: 1px solid var(--color-gray-20);
+  padding: 0.25em 0.5em;
+}
