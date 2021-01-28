@@ -1,0 +1,41 @@
+/*
+ * Do not edit directly.
+ * This file is built from source code hosted at
+ * http://www.github.com/marxists-org/stylesheets.
+ * Instructions to build and/or contribute can be found there.
+ * 
+ * Current maintained by Philip Mooney <philipm@marxists.org>.
+ */
+
+@import url("works.css");
+
+a:link {
+  color: #aa0000;
+}
+
+a:visited {
+  color: #993333;
+}
+
+div.border {
+  border: #880000;
+}
+
+h1,
+h1.big,
+h1.medium,
+h2,
+h3,
+h4,
+h5,
+h6,
+p.information,
+p.pagenote,
+p.toc,
+span.info,
+span.term,
+sup.anote,
+sup.ednote,
+sup.enote {
+  color: #330000;
+}
