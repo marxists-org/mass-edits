@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <meta http-equiv="Content-Language" content="en">
+   <meta name="author" content="Pablo Stern">
+   <meta name="description" content="Tutorial to help volunteers create eBooks">
+   <title>Creating an eBook from MIA web files using Calibre</title>
+   <link rel="stylesheet" type="text/css" href="../../archive/css/border-red.css">
+<style type="text/css">
+   li {
+   	   margin-left: 6%;
+       margin-right: 6%;
+   }
+</style>   
+</head>
+
+<body>
+<p class="title"> <a href="../../index.htm" class="title" target="_top">MIA</a>: <a href="index.htm" class="title" target="_top">Volunteer</a>:
+Create eBooks </p>
+<blockquote>
+<div class="border">
+<h1> Creating an eBook from MIA web files using Calibre </h1>
+<hr />
+<p class="fst"><strong>NB Please ensure the web book is complete and
+proofed before
+you create the ebook – any changes needed in one must be
+replicated by hand in the other.</strong></p>
+<p class="fst"><a href="https://calibre-ebook.com/">Calibre</a>
+is an open source ebook manager which includes a very effective
+editor. It is available for Windows, Mac and Linux. There is general
+guidance for using Calibre <a href="https://calibre-ebook.com/help">here</a>.
+We here create
+an ebook in epub format, which is the open standard, and then convert
+it to mobi (for Kindle) and pdf.</p>
+<hr />
+<h4>1 Create Empty Book</h4>
+<p class="fst">Open Calibre.</p>
+<p class="fst">Click on: <em>Toolbar → Add Books → Add Empty Book</em></p>
+<p class="fst">Set Author and Title, leave Format as EPUB</p>
+<hr />
+<h4>2 Set Metadata</h4>
+<h5>2.1 Edit metadata</h5>
+<p class="fst">Click on: <em>Toolbar → Edit Metadata</em></p>
+<ol>
+<li>Set tags – eg Non-fiction, Politics – and IDs, Comments,
+publication date etc. as appropriate.</li>
+<li>It's good to add a cover, but beware of copyright. You
+can create a cover yourself as a jpeg or png file using any graphics
+editor, eg Gimp or Paint. Wikipedia and Wikimedia Commons are good
+sources for copyright-free photos.</li>
+<li>Save your changes.</li>
+</ol>
+<h5>2.2 Polish book</h5>
+<p class="fst">Click on: <em>Toolbar → Polish Books</em></p>
+<p class="fst">In the Polish Book dialog check 'Update Metadata in the book
+files' and 'Update the cover in the book files', then click OK. </p>
+<p class="fst">NOTE: Once it is polished Calibre will
+normally have created an 'Original_epub' format version. <strong>It
+is essential that you delete this</strong> otherwise you risk
+losing all your work on the book if you 'polish' again at any time in
+the future. Delete it by right-clicking on ORIGINAL_EPUB on Formats
+at the right bar and select 'Delete ORIGINAL_EPUB format' – or
+use the <em>Remove Books</em> menu list option. 
+You can stop Calibre creating the
+ORIGINAL_EPUB file by clicking on <em>Preferences → Change
+Calibre
+Behaviour → Tweaks</em>, search for polish and change the setting
+to: <span style="font-family: Liberation Mono,monospace; font-size: small;">save_original_format_when_polishing
+= False</span></p>
+<hr />
+<h4>3 Add Content to Book</h4>
+<p class="fst">Click on: <em>Toolbar → Edit Book</em></p>
+<h5>3.1 Create stylesheet</h5>
+<p class="fst">Either </p>
+<ul>
+<li>Import the original .css stylesheet with <em>File
+→ Import files into book.</em> To find it on the MIA website, its
+address will be in the header of each file. Unfortunately some MIA
+books use different css files on different chapters: you could
+replicate this, but it is bad practice, so you should really pick the
+most commonly used one and if there is a missing class then put it into
+the one css file.</li>
+</ul>
+<p class="fst">Or</p>
+<ul>
+<li>Import a stylesheet which you like or create a new
+stylesheet with <em>File → New file </em>– call it eg <em>styles.css</em>
+and click <em>OK. </em>Either way you'll need to make
+sure all the <em>class= </em>entries throughout the html
+files are correct, and possibly change many of them, so it could be a
+lot more work.</li>
+</ul>
+<h5>3.2 Create a sample html file</h5>
+<ol>
+<li>Create a sample html file so you can use the header in
+the imported files. Use <em>File → New file</em>. Call it <em>test.html</em>
+and click <em>OK. </em> </li>
+<li>Make any changes to the header so it complies with MIA's
+<a href="../volunteers/ebooks.htm">eBook
+Production Guidelines</a>.</li>
+</ol>
+<h5>3.3 Add html files</h5>
+<ol>
+<li>Use <em>File → Import files
+into book </em>to import the files singly or in a batch.</li>
+<li>Re-order the files into the right order, by dragging
+them up or down the list.</li>
+<li>Smarten the code up with <em>Tools → Beautify all
+files</em>. You can also beautify files individually.</li>
+<li>In each html file replace the header from the start up
+to and including the <em>&lt;body...&gt;</em> tag
+with the header from <em>test.html</em>. </li>
+<li>In each html file you will probably need to remove quite
+a bit of material at the top of the page – typically html 'breadcrumbs'
+and the author and book name. You may be able to combine this with
+stage 4 – ie replace not just the html header but also the visible page
+headings.<br />
+Also remove any extraneous material at the bottom of the page, eg a
+'top of page' link or 'last updated' info.</li>
+</ol>
+<h5>3.4 Web addresses</h5>
+<p class="fst">Web addresses need checking and correcting. </p>
+<p class="fst" style="font-weight: bold; font-family: Helvetica, sans-serif;">1 Relative addresses outside this book</p>
+<p class="fst">Relative addresses to other MIA content need to have the
+full
+address given, ie starting with <em>www.marxists.org</em>.</p>
+<p class="fst" style="font-weight: bold; font-family: Helvetica, sans-serif;">2 Footnotes</p>
+<p class="fst">Footnotes in html in an online page may have links with the
+web
+address. If so then the web address element needs to be deleted from
+the footnote links, both in the text and the footnote, just leaving
+the '#' reference (plus the local html file if the footnote reference
+is to/from a different file in the ebook).</p>
+<p class="fst">For instance </p>
+<p style="margin-left: 8%; font-family: Liberation Mono,monospace; font-size: small;">&lt;a
+href="../../history/somebook/chap3.htm#f52"
+name="n52"&gt;52.&lt;/a&gt;</p>
+<p class="fst">or </p>
+<p style="margin-left: 8%; font-family: Liberation Mono,monospace; font-size: small;">&lt;a
+href="../chap3.htm#f52" name="n52"&gt;52.&lt;/a&gt;</p>
+<p class="fst">might be replaced with </p>
+<p style="margin-left: 8%; font-family: Liberation Mono,monospace; font-size: small;">&lt;a
+href="#f52" name="n52"&gt;52.&lt;/a&gt;</p>
+<p class="fst" style="font-weight: bold; font-family: Helvetica, sans-serif;">3 Other internal links</p>
+<p class="fst">Most other internal links can be removed, eg to the next
+chapter,
+top of page etc. Those which need to be kept will need amending as
+per Footnotes above, ie to point to a file within the book. Calibre
+will help you by suggesting possible files/references when you start
+typing the href.</p>
+<hr />
+<h4>4 Edit Book</h4>
+<h5>4.1 Correct the layout</h5>
+<p class="fst">Go through the book a file at a time correcting layout
+issues –
+typically removing excess headings etc which are needed in the web
+pages (because people can jump straight there from anywhere on the
+web), rather than each page
+being part of a book, as here.</p>
+<h5>4.2 Fix any code errors</h5>
+<p class="fst">Click <em>Run check</em> at the right of the
+Check Book section at
+the top of the editor.</p>
+<p class="fst">Click on each of the errors shown at the left to correct
+them.</p>
+<h5>4.3 Create a Table of Contents, and Contents page</h5>
+<ol>
+<li>Click on: <em>Tools → Table of Contents → Edit
+Table of Contents</em></li>
+<li>Auto-generate a table of contents with one of the
+options at the right. <em>Generate ToC from major headings </em>is
+the one to try first. If that doesn't work well try one of the others.
+You can then edit it as you wish.</li>
+<li>Auto-generate a Contents page with <em>Tools →
+Table of Contents → Insert inline Table of Contents. </em> This
+creates a toc.xhtml file as the first file. Drag it to the correct
+place for the Contents page, and edit it as you wish. You will need to
+replace the header with the standard header (which you used for all the
+other files in 3.3.4 above).</li>
+</ol>
+<hr />
+<h4>5 Proof-read the Book</h4>
+<p class="fst">Proof read the book, ideally on a PC/Mac and also an eBook
+reader/tablet/phone, so you can see how it looks in large and mobile
+format. You may well need to make quite a few formatting changes as
+the requirements for a well laid out eBook are not necessarily the
+same as for a web book.</p>
+<p class="fst">NB If you need to make any text corrections then these
+should be
+replicated in the MIA web pages – contact the <a href="../volunteers/steering.htm">MIA
+Admin Committee</a>.</p>
+<hr />
+<h4>6 Create Other Formats and Upload to MIA</h4>
+<p class="fst">Once you are happy with the book, create mobi (for Kindle)
+and pdf
+versions of it with the toolbar <em>Convert books</em>
+button.</p>
+<p class="fst">They should then be
+uploaded to MIA – contact the <a href="../volunteers/steering.htm">MIA
+Admin Committee</a>.</p>
+<p class="fst">If you have the necessary permissions yourself then you need
+to:</p>
+<ol>
+<li>Upload the books to the ebook library at mia/ebooks/...,
+creating an author folder there if there isn't one already.</li>
+<li>Reference the book in index.htm in <a href="../../ebooks/index.htm">the eBook
+page</a>, adding an author entry if necessary.</li>
+<li>Put a reference to the ebook in the front page
+(index.htm) of the web book.</li>
+</ol>
+<hr />
+<h4>7 Example</h4>
+<p class="fst">This guidance was written while converting the <a href="../../archive/cliff/works/1955/statecap/index.htm">web
+version</a> of <em>State Capitalism in Russia</em>
+into an ebook (<a href="../../ebooks/cliff/state-capitalism-in-russia-cliff.epub">epub</a>,
+<a href="../../ebooks/cliff/state-capitalism-in-russia-cliff.mobi">mobi</a>
+and <a href="../../ebooks/cliff/state-capitalism-in-russia-cliff.pdf">pdf</a>).</p>
+<hr />
+<p class="footer"><a href="index.htm">Volunteer
+Workshop</a> | <a href="../../index.htm" target="_top">Marxists
+Internet Archive</a>
+</p>
+<p class="pagenote">
+Contact the <a href="../volunteers/steering.htm" target="_top">Marxists Internet Archive Admin Committee</a>
+for further information</p>
+<p class="skip">&nbsp;</p>
+</div>
+</blockquote>
+</body></html>

@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta http-equiv="Content-Language" content="en">
+   <meta name="author" content="Andy Blunden and Jonas Holmgren">
+   <meta name="description" content="Tutorial to get new directors connected to MIA">
+   <title>Welcome to MIA!</title>
+   <link rel="stylesheet" type="text/css" href="../../archive/css/border-red.css">
+</head>
+<body> 
+<blockquote>
+<div class="border">
+<p>&nbsp;</p>
+<center>
+<img src="pics/welcome.jpg" width="442" height="64" alt="Welcome to MIA!" class="center" />
+</center>
+
+<hr class="end" />
+<p class="indentb">
+<a href="#security">Security in General</a><br />
+<a href="#passwd">Changing your password</a><br />
+<a href="#email">Getting your Email</a>, including <a href="../janitor/spam-good.htm">How to avoid spam</a>.<br />
+<a href="#scp">Transferring Files</a><br />
+<a href="#ports">Port Tunneling</a></p>
+<hr class="end" />
+
+
+<p>
+Welcome aboard, we're glad to have you with us! This page is here to help you get connected to our servers, enabling you to check your marxists.org mail and transfer information onto our servers.</p>
+<p>
+Generally, you will be using your own email account, and we have subscribed you to the mia-lst&#64;marxists.org. Where needed we can provide you with a marxists.org email with an alias.</p>
+<p class="skip">&#160;</p>
+
+<a name="security"></a>
+<h4>Security in General</h4>
+<p>
+In many countries around the world, the possession or distribution of Marxist information is illegal, and can be met with severe penalties. Presently the majority of MIA volunteers are from the most advanced capitalist countries, where distributing this content has been more or less legal for the past fifty years. In these nations where "democracy" is championed, we nonetheless continuously face a variety of subtle assaults. </p>
+<p>
+Simply stated, these archives need to be secure; both for the preservation of texts in an <em>undoctored</em> form <img src="pics/Fk-47.jpg" width="288" height="381" alt="Harvest" align="left" hspace="10" vspace="10" /> and for the preservation of volunteer and reader anonymity.</p>
+<p>
+So please keep this need in mind as you walk through learning how to setup a secure connection to our server. It does take time, and it may not work on your first attempt if you do not follow the instructions all together. That's ok, and we are here to help. Just grab a cup of coffee and get ready for some work, and the opportunity to learn how to communicate securely with others.</p>
+<p>
+We use a technology widely used for secure transmissions called Secure Shell (SSH). Our server will only accept secure connections, any other attempt to connect to the server is automatically refused. "Secure Shell (SSH), sometimes known as Secure Socket Shell, is a  protocol for securely getting access to a remote computer. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by being encrypted." For further, in depth information on securely communicating between computers, here is a good guide:</p>
+<p class="indentb">
+&#160; &#160;<strong><a href="http://www.onsight.com/faq/ssh/ssh-faq.html">http://www.onsight.com/faq/ssh/ssh-faq.html</a></strong></p>
+
+<a name="passwd"></a>
+<h5>Changing your password</h5>
+
+<p>
+The first step we need to take is changing your password, because it was sent to you through an insecure method. So long as you change your password immediately, this is ok, because even if someone intercepted it, you will change it through a secure method. Simply go to:</p>
+
+<p class="indent">
+&#160; &#160;<strong><a href="https://secure.marxists.org/cgi-bin/passwd" class="absref">http://marxists.org/password</a></strong> (use your <em>current</em> login)</p>
+<p>
+Try to choose a password that is completely random. Do not use a password that contains any word that can be found in any dictionary; instead use a random mix of numbers, letters, and symbols. We will require all volunteers to change their password every 
+twelve months. Be sure to guard over your password, the vast majority of hacking occurs not through computer systems, but social systems! Don't tell your password to others, don't send it to anyone in any form; and if you must write it down, use a <a href="https://en.wikipedia.org/wiki/List_of_password_managers" target="_blank">password manager</a> such as <em>KeePass</em>.
+</p>
+
+<a name="email"></a>
+<h4>Getting your Email if you have an alias@ marxists.org</h4>
+
+<p>Getting an account on the server does <em>not</em> automatically provide you with a marxists.org 
+email address. The account administrator can opt to set up a mail forwarding to your external address instead.</p>
+<p>If you have a marxists.org email address, however, you can get your email one of two ways.</p>
+<p class="fst">
+<strong>(1)</strong> One way is by accessing your inbox through the web. You can do this simply by going to the following address:</p>
+<p class="indentb">
+&#160; &#160;<strong> <a href="https://mail.marxists.org/">https://mail.marxists.org/</a></strong>
+</p>
+<p class="fst">
+Notice there is an 's' at the end of https &#8211; this makes a secure connection over the web, which we require for any login made to the MIA server. Once you've entered the above address in your web browser, just enter your login name (e.g. jbloggs) and password &#8211; and your off and running! :) </p>
+<center><img src="pics/Tekhmenev.jpg" width="506" height="242" alt="International Friendship" /></center>
+<p class="fst">
+<strong>(2)</strong> Alternatively, you may like to use your favorite e-mail program to access your marxists.org mail. Besides already being comfortable with whatever program you like, this also allows you to browse and write mails off-line, which is helpful for those who have to pay an hourly rate to connect to the Internet.</p>
+<p>
+There are basically two ways we can do this:</p>
+<p class="indentb">
+<strong>(a)</strong> If the program you like is able to use IMAP SSL/TLS, the setup is simple. If you don't have a favorite e-mail program, we recommend using <a href="https://www.mozilla.org/en-GB/thunderbird/" target="_blank"><strong>Mozilla Thunderbird</strong></a>, the replacement for <a href="mozilla.htm">Mozilla Mail &amp; Newsgroup</a>, and we have detailed instructions on <a href="../janitor/thunderbird.htm"><strong>how to setup</strong></a> your mail in that program. 
+Popular mail programs that support secure communication use to be Outlook Express and Netscape Communicator. For these programs, setup your account in the following way:</p>
+<p class="indentb">
+<span class="book">Incoming Mail server type:</span> IMAP<br />
+<span class="book">Incoming Mail server name:</span> imap.marxists.org port 993.<br />
+<span class="book">Outgoing Mail server name:</span> smtp.marxists.org port 587.<br />
+<span class="book">Account name (or "User name"):</span> your username<br />
+<span class="book">Password:</span> your password<br /></p>
+<p class="indentb">
+After this, you just need to tell the program that the IMAP you are using is SSL:</p>
+<p class="indentb">
+1.	In Outlook Express, click Accounts on the Tools menu.<br />
+2.	Click the Mail tab, and then click the appropriate mail account to select it. <br />
+3.	Click Properties, and then click the Advanced tab. <br />
+4.	Click the "This server requires a secure connection (SSL)" check box to select it, click OK, and then click Close.</p>
+<p>If the program asks for what your "IMAP path prefix" is, or your "root mail folder", type in "Maildir/".</p>
+<p> If you use <b>Eudora</b> see this <a href="../janitor/eudora.htm">minor variation on the above procedure</a>.</p>
+<p class="fst">
+<strong>(b)</strong> If the program you are using doesn't support secure email, you can still use that program! It is a little more complicated, but if you'd like to use it, just learn how to setup <a href="#ports">port tunneling</a>, detailed below.</p>
+<p>GNU Users please look at <a href="../janitor/gnu.htm">this page</a>.</p>
+<p>
+Please keep in mind that checking your e-mail is important for
+communicating with other members of the MIA collective and readers
+with questions regarding the work that you put online. Unfortunately,
+because we have a very high traffic site, we receive a lot of SPAM -
+unsolicited mail usually from capitalists trying to sell everything from sexual
+surgery to toner for your printer. If you get too much of a certain
+type of SPAM, ask <a href="steering.htm">the MIA Admin Ctee</a> for advice.
+</p>
+
+<a name="spam"></a>
+<p class="fst">For further information, see <a href="../janitor/spam-good.htm">How to avoid spam</a>.</p>
+
+<a name="scp"></a>
+<h4>Transferring Files</h4>
+
+<p><strong>Windows:</strong> See our guide on <a href="../janitor/transfer.htm">How to transfer files to the MIA server</a></p>
+<p>Download a WinSCP from <a href="http://winscp.net/">http://winscp.net/</a>. Set:</p>
+<blockquote>
+<ul class="disc">
+<li>Host name &#160; ftp.marxists.org</li>
+<li>Port &#160; 22</li>
+<li>Enter username &#160; (not alias!!)</li>
+<li>Your password ...</li>
+<li>Select&nbsp;&nbsp; SFTP</li>
+</ul>
+</blockquote>
+<p>
+<strong>Macintosh (OS 9.2 or earlier):</strong> <a href="http://pro.wanadoo.fr/chombier/">Download the MacSFTP client</a>. Use the server name 
+ftp.marxists.org, then enter your username and password. If you would rather use your favorite FTP client, this can still be done, you just need to setup <a href="#ports">port tunneling</a> to make the data 
+transferred secure. <br />
+<strong>Macintosh (OS X or later):</strong> Simply download this program: <a href="http://rsug.itd.umich.edu/software/fugu/">Fugu</a>. In the connection dialogue box, select the protocol "SFTP". For "Host" enter 
+ftp.marxists.org, then your username and password. Login! :)</p>
+
+<h4>HTML Editors?</h4>
+
+<p>
+Wondering what to use for HTML? Well, some of us use text editors to do html, so we can make two good suggestions here. If you would like a simpler editor, we aren't really sure what is best, but I'd recommend trying <a href="http://www.mozilla.org/"> Mozilla Firefox</a>, which is a web-browser, e-mail program, &amp; friendly HTML editor. If you find something that works for you, <a href="biographies/bbaggins.htm">let me know</a>. As for text editors, if you are using a Mac, <a href="http://www.barebones.com/products/bbedit.html">BBEdit</a> is the way to go. If you are using Windows, <a href="http://www.parkenet.com/apl/PHE.htm">PHE</a> is a good program to use. Alternatively, for PC Users, <a href="../janitor/1stpage.zip">download 1st-Page-2000</a>, which is an HTML Editor which is now off the market.
+</p>
+
+<a name="ports"></a>
+<h5>
+Port Tunneling (Experts only)
+</h5>
+<p>
+If you have a program that cannot communicate securely, no worries! You just need to "tunnel" your connection, allowing you to use any regular mail or ftp program to send all of it's data to a certain "ssh" program, which in turn 
+encrypts that information, <img src="pics/Fk-33.jpg" width="223" height="284" alt="Cable Factory" vspace="10" hspace="10" align="right" />and sends it over the Internet securely . For example, once we get setup, if you use Eudora for email, it will send all its data to the ssh program, which 
+encrypts it and sends it out over the web securely, allowing you to connect to our server.
+</p>
+<p>
+For your regular mail or ftp client to connect to MIA successfully, the connections you've setup in the ssh client must be open (which we will explain doing below) so it can 
+encrypt the data as you send it. In your mail and ftp client, use the hostname "localhost". You use this because your programs want to connect to  the ssh program on <em>your</em> computer, not marxists.org &mdash; the ssh program <em>then</em> connects to marxists.org.
+</p>
+<p>
+<strong>Macintosh:</strong>
+</p>
+<ol class="numbered">
+<li> Use the Terminal program found on every Mac operating OS X of higher.
+</li>
+<li>
+There is a very good explanation of how to do this on the internet (Note, the only thing you'll have to do differently is specify us as the host when setting up the ssh connection -- our hostname is "marxists.org".)<br />&#160; &#160; <a href="http://css.sfu.ca/nsg/cssnetdocs/ssh/mac/tunneling.html">Port Forwarding on the Mac</a> The instructions here are not that different for use with the Mac OS X's Terminal program.
+</li>
+<li>
+The example above is to setup FTP, thus the port is 21. For email, the port is 143. You can setup two 'favorites' in MacSSH for each port, and open them both up at the same time, so you can use mail and ftp at the same time. 
+</li>
+</ol>
+
+<p>
+<strong>Windows 95, 98, and 2000:</strong> 
+</p>
+
+<ol class="numbered">
+<LI>You'll need to get Tera Term SSH (TTSSH).  Start by downloading:<br />
+        &#160; &#160; <a href="http://www.uncwil.edu/download/tc/pc/ttpro/ttermp23.exe">http://www.uncwil.edu/download/tc/pc/ttpro/ttermp23.exe</a><br />   &#160; &#160;     <a href="http://www.cs.cmu.edu/~roc/ttssh154.zip">http://www.cs.cmu.edu/~roc/ttssh154.zip</a>
+</LI>
+<LI>
+Install Tera Term Pro (ttermp23).  Then unzip ttssh154 in the same
+directory you installed Tera Term (probably C:\Program Files\TTERMPRO).
+</LI>
+<LI>
+Now launch it by going to Start > Run...
+</LI>
+<LI>
+"C:\Program Files\TTERMPRO\ttssh"
+</LI>
+<LI>
+        Hit Cancel</LI><LI>
+        Go to Setup > TCP/IP</LI><LI>
+        Remove everything.  Add an entry for ftp.marxists.org, turn off
+          Telnet and set the port to 22.</LI><LI>
+        Go to File > New Connection.  ftp.marxists.org should show up,
+          you'll probably have to explicitly select SSH.</LI><LI>
+        Login with the login and password we sent you.</LI><LI>
+        Now go Setup > SSH Forwarding</LI><LI>
+        Hit Add</LI><LI>
+        Forward local port 25 to smtp.marxists.org port 25.</LI><LI>
+        Repeat this for ports 110, and 143.</LI><LI>
+        Go to Setup > Save Setup</LI>
+        <LI>
+        When you start up Tera Term SSH next time, it will offer ftp.marxists.org
+via SSH as the default.
+        </LI>
+        </OL>
+        
+<p>
+Last but not least, feel free to <a href="biographies/howto.htm">make a biography for yourself</a>!
+</p>
+
+<hr class="end" />
+
+<p class="footer">
+<a href="../intro/index.htm">Introduction to MIA</a> |
+<a href="../janitor/index.htm">Janitor's Page</a> |
+<a href="../../index.htm">MIA</a>
+</p>
+
+<p class="skip">&#160;</p>
+<p class="pagenote">
+Contact the <a href="../volunteers/steering.htm" target="_top">Marxists Internet Archive Admin Committee</a> for further information</p>
+<p class="skip">&#160;</p>
+
+</div>
+</blockquote>
+
+</body>
+</html>
